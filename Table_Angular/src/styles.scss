@@ -59,6 +59,11 @@ body {
    margin-right:10px !important;
 }
 
+ .mat-mdc-option .mdc-list-item__primary-text {
+   font-size:13px !important;
+   margin-right:0px !important
+}
+
 .cdk-overlay-pane {
   div.mat-mdc-menu-panel {
     max-width: none;
