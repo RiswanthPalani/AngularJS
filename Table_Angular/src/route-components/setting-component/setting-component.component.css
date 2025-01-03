@@ -1,0 +1,19 @@
+#path-container{
+    display: flex;
+    align-items: center;
+    font-size: large;
+    margin-top:20px;
+
+     a {
+       padding-right:10px;
+     }
+
+  }
+  #blue-span {
+    color: blue;
+   }
+   a {
+    text-decoration: none;
+   }
+
+  

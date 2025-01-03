@@ -1,0 +1,95 @@
+@use '@angular/material' as mat;
+// @import 'tailwindcss/base';
+// @import 'tailwindcss/components';
+// @import 'tailwindcss/utilities';
+// @tailwind base;
+// @tailwind components;
+// @tailwind utilities;
+
+
+body {
+  // font-family: Roboto, "Helvetica Neue", sans-serif;
+  // margin: 0;
+  // padding: 30px;
+  // height: 100%;
+  // background-color: red;
+  // overflow: hidden;
+  margin:0;
+   
+
+  @include mat.theme((
+    color: (
+      theme-type: light,
+      primary: mat.$azure-palette,
+      tertiary: mat.$blue-palette,
+    ),
+    typography: Roboto,
+    density: 0,
+  ));
+}
+
+.mat-mdc-paginator-page-size  {
+  .mat-mdc-form-field{
+   width:60px;
+  
+  }
+
+  .mat-mdc-text-field-wrapper.mdc-text-field.mdc-text-field--outlined.mdc-text-field--no-label{
+     height: 30px;
+  }
+ .mat-mdc-form-field-infix {
+  padding:0px;
+ }
+
+}
+.mat-mdc-paginator-page-size  {
+  align-items: center !important;
+}
+.mat-mdc-paginator-page-size .mat-mdc-text-field-wrapper{
+  padding-left: 5;
+  padding-right: 5;
+
+}
+.mat-mdc-paginator-page-size .mat-mdc-form-field-infix {
+  
+   padding-top:2px !important;
+}
+.mat-mdc-paginator-range-label{
+   margin-left:10px !important;
+   margin-right:10px !important;
+}
+
+.cdk-overlay-pane {
+  div.mat-mdc-menu-panel {
+    max-width: none;
+    
+  }
+  .custom-menu {
+    // background-color: red ;
+    width:90vw ;
+    padding-left:10px ;
+    padding-right:10px;
+  
+  }
+  .mat-mdc-menu-content{
+    font-weight: normal ;
+  }
+}
+
+@media screen and (max-width:706px){
+  .cdk-overlay-pane {
+     .custom-menu {
+      width:80vw;
+      // background-color: red;
+     }
+  }
+}
+@media only screen and (max-width:545px){
+  .cdk-overlay-pane {
+    .custom-menu {
+     width:70vw;
+    //  background-color: red;
+    }
+ }
+  
+}

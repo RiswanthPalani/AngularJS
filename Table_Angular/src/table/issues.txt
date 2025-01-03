@@ -1,0 +1,13 @@
+
+
+1. userdata is not updating after received from api
+2. search icon is not coming within search input
+
+3. border bottom on mat-rows
+4.Hovering menu
+
+#f2f7fd
+
+
+
+

@@ -1,0 +1,185 @@
+
+<div class="side-and-table flex  h-auto min-h-screen  ">
+<div class="side-bar-container bg-dark-purple pl-4 pr-6 top-0 flex flex-col relative gap-10 duration-200 hover:w-52 z-10 " 
+[ngClass]="{'w-8 p-5': sideBarOpen == 1, 'w-0 p-0': sideBarOpen !== 1}" (mouseenter)="mouseHovering()" (mouseleave)="mouseLeaving()">
+       <!-- <h1 class="text-white">Menu</h1> -->
+        <img src="/Tailwind_logo-removebg-preview.png" alt="logo" class="h-12 w-12">
+      
+        <div class="flex gap-2  p-1  pr-7  hover:bg-icon-bck rounded" (mouseenter)="divHover()" (mouseleave)="divLeave()"> 
+          <mat-icon class="text-white z-8 shrink-0 duration-100" [ngClass]="{'text-black':isDivHover==true}" >settings</mat-icon>
+        <span *ngIf="isHovering==true"  class="text-white font-sans pl-1 cursor-default" [ngClass]="{'text-black':isDivHover==true} ">Settings</span> <!--,'hidden':isHovering===false}-->
+        </div>
+        <div class="flex gap-2   pr-7 hover:bg-icon-bck rounded p-1">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-white shrink-0">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 0 1-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0 1 15 18.257V17.25m6-12V15a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 15V5.25m18 0A2.25 2.25 0 0 0 18.75 3H5.25A2.25 2.25 0 0 0 3 5.25m18 0V12a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 12V5.25" />
+          </svg>
+          <span *ngIf="isHovering==true" class="text-white font-sans pl-1 cursor-default">Desktop</span>
+        </div>
+
+        <div class="flex gap-2   pr-7 hover:bg-icon-bck rounded p-1">
+          <mat-icon class="text-white shrink-0">device_hub</mat-icon>
+          <span *ngIf="isHovering==true" class="text-white font-sans pl-1 cursor-default">Hub</span>
+        </div>
+        
+        <div class="flex gap-2  pr-7 hover:bg-icon-bck rounded p-1">
+           <mat-icon class="text-white shrink-0">laptop_windows</mat-icon>
+           <span *ngIf="isHovering==true" class="text-white font-sans pl-1 cursor-default">Windows</span>
+        </div>
+        
+        <div class="flex gap-2  pr-7 hover:bg-icon-bck rounded p-1">
+          <mat-icon class="text-white shrink-0">list_alt</mat-icon>
+          <span *ngIf="isHovering==true" class="text-white font-sans pl-1 cursor-default">Lists</span>
+       </div>
+
+        <div class="flex gap-2 pr-7 hover:bg-icon-bck rounded p-1">
+          <mat-icon class="text-white shrink-0">settings_applications</mat-icon>
+          <span *ngIf="isHovering==true"  class="text-white font-sans pl-1 cursor-default"> Applications</span>
+        </div>
+</div>
+
+<div class="table-component-container w-100%-4.25rem absolute left-4.25rem">
+  <div 
+  class="nav-bar ml-0 mt-2 bg-white shadow-md w-full ">
+  <div class="flex gap-2 items-center text-grey pb-1">
+    <mat-icon class="hover:bg-icon-hover p-2 ml-5 rounded-full">menu</mat-icon>
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 rounded-full hover:bg-icon-hover p-2 text-grey">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 21 3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" />
+    </svg>
+    
+  </div>
+   
+  </div> 
+<div id="path-container" class="ml-5">
+    <a routerLink = '/setting'><span id="blue-span">Settings</span></a>
+    <mat-icon>chevron_right</mat-icon>
+    <a routerLink="/organization"><span id="blue-span">Organisation</span></a>
+    <mat-icon>chevron_right</mat-icon>
+    <a routerLink="/bautomate"><span id="blue-span">BAutomate</span></a>
+    <mat-icon >chevron_right</mat-icon>
+    <a routerLink="/accessmanage"><span  id="blue-span">Access Management </span></a>
+    <mat-icon>chevron_right</mat-icon>
+    <span>User</span>
+</div>
+<div class="table-top">
+      
+        
+    <div id="icon-container">
+      <!-- <span>users created</span>
+      <span class="value">  0.70%</span>
+      <div class="w3-light-grey">
+          <div class="w3-grey" style="height:24px;width:70%"></div> 0.70%
+      </div> -->
+      <!-- <mat-form-field>
+        <input matInput placeholder=" search" (input)="onInputChange($event)" class="search-input"
+      style=" padding-top: 10px; padding-bottom: 10px; padding-right: 0px; padding-left: 5px; ">
+      <mat-icon matSuffix> search</mat-icon>
+      </mat-form-field> -->
+      <div class="search-holder flex items-center relative">
+      <input placeholder=" search" (input)="onInputChange($event)" class="search-input" 
+      style=" padding-top: 10px; padding-bottom: 10px; padding-right: 0px; padding-left: 5px; border-radius:10px;">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 absolute left-36 text-grey">
+        <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+      </svg>
+    </div>
+      
+      <mat-icon id="add" (click)="onAdd()">add</mat-icon>
+      <!-- <img src="icons/view_week_24dp_0000F5_FILL0_wght400_GRAD0_opsz24.svg" alt="view" id="view"> -->
+      <mat-icon id="rotate_right" (click)="reload()">rotate_right</mat-icon>
+      </div>
+  </div>
+<div class="mat-elevation-z8 table-container">
+    
+<table mat-table [dataSource]="dataSource" class="table" multiTemplateDataRows>
+
+    <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef  class="table-header text-small"> Name</th>
+        <td mat-cell *matCellDef="let user , element" class="text-small"> {{user.name}} </td>
+    </ng-container>
+      
+    <ng-container matColumnDef="emailId">
+        <th mat-header-cell *matHeaderCellDef class="table-header text-small">  Email Id</th>
+        <td mat-cell *matCellDef="let user" class=" text-small"> {{user.emailId}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="role">
+        <th mat-header-cell *matHeaderCellDef class="table-header text-small">Role</th>
+        <td mat-cell *matCellDef="let user" class="text-small"> {{user.role}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="userGroup">
+        <th mat-header-cell *matHeaderCellDef class="table-header text-small" > User Group</th>
+        <td mat-cell *matCellDef="let user" class="text-small"> {{user.userGroup}}  </td>
+    </ng-container>
+
+    <ng-container matColumnDef="createdBy" class="hide" >
+        <th mat-header-cell *matHeaderCellDef class="table-header text-small" > Created By</th>
+        <td mat-cell *matCellDef="let user" class="text-small"> {{user.createdBy}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="createdOn">
+        <th mat-header-cell *matHeaderCellDef class="table-header text-small"> Created On</th>
+        <td mat-cell *matCellDef="let user; let i = index" class="text-small"> {{user.createdOn}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef class="table-header text-small">Action</th>
+        <td mat-cell *matCellDef="let user; let i = dataIndex" class="text-small"> 
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5 font-bold text-red text-small rounded-full p-1 cursor-pointer hover:bg-icon-hover" (click)="openDialog(user.ID)">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5 text-small text-edit-purple p-1 rounded-full cursor-pointer hover:bg-icon-hover" (click)="openEdit(user.ID)">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
+          </svg>
+          
+          
+            <!-- <mat-icon class="icon material-icons-outlined" id="delete" (click)="openDialog(user.ID)" >delete_outline</mat-icon> -->
+            <!-- <mat-icon class="icon" id="edit" (click)="openEdit(user.ID)">edit_note</mat-icon> -->
+             <button (click)="expandedUser === user ? (expandedUser = empty):(expandedUser=user)" class="hover:bg-icon-hover">
+              <mat-icon *ngIf="expandedUser!==user" class="icon "id="expand"  >expand_more</mat-icon>
+              <mat-icon *ngIf="expandedUser===user" class="icon"id="expand" >keyboard_arrow_up</mat-icon>
+            </button> 
+            <!-- (click)="openExpand(i)"-->             
+        </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="expandedDetail" class="expand-form">
+        <td mat-cell *matCellDef="let user" [attr.colspan]="displayedColumns.length" class="expand-td text-small">
+          <div  [@detailExpand]="user == expandedUser ? 'expanded' : 'collapsed'" class="example-element-detail grid grid-cols-2 2-row:grid-cols-custom-3r 3-row:grid-cols-custom-4r 4-row:grid-cols-custom-5r grid-flow-row gap-1 ">
+            <div class="pb-2 pt-2"> Name : <br> {{user.name}}</div>
+            <div class="pb-2 pt-2">  Email ID : <br>{{user.emailId}}</div>
+            <div class="pb-2 pt-2 ">   Role :<br> {{user.role}}</div>
+            <div class="pb-2 pt-2">  User Group :<br> {{user.userGroup}}</div>
+            <div class="pb-2 pt-2">  Created By :<br> {{user.createdBy}}</div>
+            <div class="pb-2 pt-2">  Created On :<br> {{user.createdOn}}</div>
+            <div class="pb-2 pt-2"> Department :<br> {{user.department}}</div>
+            <div class="pb-2 pt-2">  First Name :<br> {{user.firstName}}</div>
+            <div class="pb-2 pt-2">  Last Name :<br> {{user.lastName}}</div>
+            <div class="pb-2 pt-2">   Job Title :<br> {{user.jobTitle}}</div>
+            <div class="pb-2 pt-2">  Primary Number :<br> {{user.primaryNumber}}</div>
+            <div class="pb-2 pt-2">  Secondary Number :<br> {{user.secondaryNumber}}</div>
+            <div class="pb-2 pt-2"> Fax :<br> {{user.fax}}</div>
+          </div>
+        </td> 
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"   ></tr>
+  <!-- <tr mat-row *matRowDef="let Ex-row; columns: ['ExpandRow']" class="example-detail-row"></tr> -->
+  <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="expand-detail-row" ></tr>
+
+</table>
+ 
+</div>
+<mat-paginator [ngClass]="{'hidden':pageSize==0}"
+  showFirstLastButtons
+  [pageSizeOptions] = "[7,15,20]"
+  aria-label="Select page"
+  class = "table-paginator ">
+</mat-paginator>
+<div *ngIf="pageSize==0" class=" text-center p-5 font-sans font-small">Not found !</div>
+</div>
+ 
+</div>
+
+

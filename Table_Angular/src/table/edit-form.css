@@ -1,0 +1,33 @@
+input {
+    padding:5px;
+    margin-bottom: 30px;
+    
+}
+
+form {
+    /* display: flex;
+    flex-wrap: wrap;
+    gap:30px; */
+    /* justify-content: center; */
+    /* background-color: red; */
+    display: flex;
+    flex-wrap: wrap;
+    gap:20px;
+    /* background-color: aqua; */
+    /* height: 50%; */
+   
+
+    
+}
+.input-container {
+      /* background-color: red; */
+      height: 80px;
+     
+     
+}
+ .edit-dialog-container {
+    display: flex;
+    /* justify-content: center;
+    align-items: center;
+     */
+ }

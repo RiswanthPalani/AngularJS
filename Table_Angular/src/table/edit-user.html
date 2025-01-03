@@ -1,0 +1,30 @@
+<mat-dialog-content>
+  <p>User Name</p>
+  <mat-form-field>
+    <mat-label >username</mat-label>
+    <input matInput [(ngModel)]="userData.name" />  <!-- [(ngModel)]="animal"-->
+  </mat-form-field>
+
+  <p>Email Id</p>
+  <mat-form-field>
+    <mat-label>emailId</mat-label>
+    <input matInput [(ngModel)]="userData.emailId" />
+  </mat-form-field>
+
+  <p>Role</p>
+  <mat-form-field>
+    <mat-label>role</mat-label>
+    <input matInput [(ngModel)]="userData.role" />
+  </mat-form-field>
+
+  <p>User Group</p>
+  <mat-form-field>
+    <mat-label >userGroup</mat-label>
+    <input matInput [(ngModel)]="userData.userGroup" />
+  </mat-form-field>
+
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-button  cdkFocusInitial (click)="onConfirm()">Confirm</button>  <!--[mat-dialog-close]="animal()"-->
+</mat-dialog-actions>

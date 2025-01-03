@@ -1,0 +1,20 @@
+<!-- <h2 mat-dialog-title>Delete file</h2>
+<mat-dialog-content>
+  Are you sure you want to delete the data of "{{delUsername}}"?
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button mat-dialog-close>No</button>
+  <button mat-button  mat-dialog-close cdkFocusInitial (click)="onDeleteYes()">Yes</button>
+</mat-dialog-actions> -->
+
+<h3 mat-dialog-title style="text-align: center; background-color: rgb(64, 95, 233); margin-bottom: 10px; color:white">Confirm</h3>
+<mat-dialog-content>
+ <p>Name: {{delUser.name}} </p>
+ <p>EmailID: {{delUser.emailId}} </p>
+ <P>Role: {{delUser.role}}</P>
+ <p>Department: {{delUser.department}}</p>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button mat-dialog-close>No</button>
+  <button mat-button  mat-dialog-close cdkFocusInitial (click)="onDeleteYes()">Yes</button>
+</mat-dialog-actions>

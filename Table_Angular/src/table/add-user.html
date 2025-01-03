@@ -1,0 +1,98 @@
+<mat-dialog-content  class="add-dialog-container">
+    
+      <form class="add-form">
+        <div class="flex-container">
+             <mat-form-field appearance="outline" class="select-error"><mat-label> Department</mat-label><br/>
+            <!-- <input matInput required type="text"  [(ngModel)]="newUser.department" [ngModelOptions]="{standalone: true}"> <br/></mat-form-field> -->
+             <mat-select required [(ngModel)]="newUser.department"  [formControl]="addDepartment" (blur)="updateDepartmentErrorMessage()">
+              <mat-option>None</mat-option>
+              <mat-option value="Department-1">Department - 1</mat-option>
+              <mat-option value="Department-2">Department - 2</mat-option>
+             </mat-select>
+
+             @if (addDepartment.invalid) {
+              <mat-error class="input-error">{{departmentErrorMessage()}}</mat-error>}
+            
+            </mat-form-field>
+           
+            <mat-form-field appearance="outline" class="input-error"><mat-label> First Name </mat-label><br/>
+             <input matInput required type="text" placeholder="First Name" [(ngModel)]="newUser.firstName" 
+             [formControl]="addFirstName" (blur)="updateFirstNameErrorMessage()"> <br/>
+
+             @if (addFirstName.invalid) {
+              <mat-error class="input-error">{{firstNameErrorMessage()}}</mat-error>}
+            
+            </mat-form-field>
+             <mat-form-field appearance="outline" class="input-error"><mat-label> Last Name</mat-label><br/>
+                 <input matInput required type="text"  [(ngModel)]="newUser.lastName" 
+                 [formControl]="addLastName" (blur)="updateLastNameErrorMessage()"> <br/>
+                 @if (addLastName.invalid) {
+                  <mat-error class="input-error">{{lastNameErrorMessage()}}</mat-error>}
+                </mat-form-field>
+
+            <mat-form-field appearance="outline" class="input-error"><mat-label>Username</mat-label><br/>
+                <input matInput required type="text"  [(ngModel)]="newUser.name" 
+                [formControl]="addUserName" (blur)="updateUserNameErrorMessage()"> <br/>
+                @if (addUserName.invalid) {
+                  <mat-error class="input-error">{{userNameErrorMessage()}}</mat-error>}</mat-form-field>
+        
+            <mat-form-field appearance="outline" class="select-error"><mat-label>User Group</mat-label><br/>
+              <mat-select required [(ngModel)]="newUser.userGroup" 
+              [formControl]="addUserGroup" (blur)="updateUserGroupErrorMessage()" >
+                <mat-option>None</mat-option>
+                <mat-option value="User Group-1">User Group - 1</mat-option>
+                <mat-option value="User Group-2">User Group - 2</mat-option>
+               </mat-select>
+
+               @if (addUserGroup.invalid) {
+                <mat-error>{{userGroupErrorMessage()}}</mat-error>}
+      
+              
+              </mat-form-field>
+            <mat-form-field appearance="outline" class="select-error"><mat-label>Role</mat-label><br/>
+              <mat-select required [(ngModel)]="newUser.role" [formControl]="addRole" (blur)="updateRoleErrorMessage()">
+                <mat-option>None</mat-option>
+                <mat-option value="Role-1">Role - 1</mat-option>
+                <mat-option value="Role-2">Role - 2</mat-option>
+               </mat-select>
+
+               @if (addRole.invalid) {
+                <mat-error>{{roleErrorMessage()}}</mat-error>}
+              </mat-form-field>
+            <mat-form-field appearance="outline"><mat-label>Password</mat-label><br/>
+               <input matInput  type="text"  [(ngModel)]="newUser.password" [ngModelOptions]="{standalone: true}"> <br/></mat-form-field>
+        <mat-form-field appearance="outline"><mat-label>Confirm Password</mat-label><br/>
+               <input matInput  type="text"  [(ngModel)]="newUser.confirmPassword" [ngModelOptions]="{standalone: true}"> <br/></mat-form-field>
+      
+           <mat-form-field appearance="outline" class="input-error"><mat-label>Email ID</mat-label><br/>
+                <input matInput required type="text" [(ngModel)]="newUser.emailId" 
+                [formControl]="addEmailID" (blur)="updateEmailIDErrorMessage()"> <br/>
+                @if (addEmailID.invalid) {
+                  <mat-error>{{emailIDErrorMessage()}}</mat-error>}
+              </mat-form-field> 
+
+                <mat-form-field appearance="outline"><mat-label>Job Title</mat-label><br/>
+                    <input matInput type="text
+                    " [(ngModel)]="newUser.jobTitle" [ngModelOptions]="{standalone: true}"></mat-form-field> 
+            <mat-form-field appearance="outline"><mat-label>Primary Number </mat-label><br/>
+            <input matInput type="text"  [(ngModel)]="newUser.primaryNumber" [ngModelOptions]="{standalone: true}"><br/></mat-form-field>
+            <mat-form-field appearance="outline"><mat-label>Secondary Number</mat-label><br/>
+            <input matInput type="text"  [(ngModel)]="newUser.secondaryNumber" [ngModelOptions]="{standalone: true}" > <br/></mat-form-field>
+      
+            <mat-form-field appearance="outline"><mat-label> Fax</mat-label><br/>
+             <input matInput type="text"  [(ngModel)]="newUser.fax" [ngModelOptions]="{standalone: true}" >  <br/></mat-form-field>
+
+             <mat-checkbox>Enable WhatsApp notifications</mat-checkbox>
+      </div>
+      </form>
+   </mat-dialog-content>
+   <mat-dialog-actions>
+     <button mat-raised-button (click)="onNoClick()">Cancel</button>
+     <button mat-flat-button  cdkFocusInitial (click)="onConfirm()"
+      [disabled]="(newUser.department.trim()==='')||(newUser.firstName.trim()==='')||(newUser.lastName.trim()==='')||(newUser.name.trim()==='')
+      ||(newUser.userGroup.trim()==='')||(newUser.role.trim()==='')||(newUser.emailId.trim()==='')">
+      Confirm</button>  
+   </mat-dialog-actions>
+   
+
+ 
